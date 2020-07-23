@@ -1,0 +1,108 @@
+{
+    "reactReduxStore-Create":{
+        "prefix": "rrs",
+        "body":[
+            "import {createStore, applyMiddleware, compose} from 'redux'",
+            "import thunk from 'redux-thunk'",
+            "import rootReducer from './reducers';",
+            "const middleWare = [thunk];",
+            "",
+            "const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;",
+            "const store = createStore(rootReducer, composeEnhancers(",
+            "",
+            "applyMiddleware(...middleWare)",
+            "",
+            "));",
+
+            "export default store;"
+        ]
+    },
+
+    "reactRedux-Type": {
+        "prefix": "rrt",
+        "body": "export const ${2:TypeName} = '${1:TypeName}';"
+    },
+
+    "reactRedux-rootReducer": {
+        "prefix": "rrrs",
+        "body":[
+                "import {combineReducers} from 'redux'",
+                "",
+                "const rootReducer = combineReducers({",
+                "",
+                "});",
+                "",
+                "export default rootReducer;"
+        ]
+    },
+
+    "reactRedux-reducer": {
+        "prefix": "rrrd",
+        "body":[
+                "const initialState = {",
+                    "\tloading: false,",
+                    "\tdata:[],",
+                    "\terror: ''",
+                "};",
+                "",
+                "const ${1:${TM_FILENAME_BASE}} = (state = initialState, {type, payload}) =>{",
+                    "\tswitch(type){",
+                        "\t\tcase ${2:TypeName} :",
+                            "\t\treturn {",
+                                "\t\t\t\t...state,",
+                                "\t\t\t\t...payload,",
+                                "\t\t\t\tloading: true",
+                            "\t\t};",
+                            "",
+                        "\t\tdefault:",
+                            "\t\t\treturn state;",
+                    "\t}",
+                "",
+                "};",
+                "",
+                "export default ${1:${TM_FILENAME_BASE}};",
+            ]
+    },
+
+    "reactRedux-Action": {
+        "prefix": "rra",
+        "body":[
+                "",
+                "",
+                "export const ${1:Funcion_Name} =  ()  => {",
+                    "\treturn (dispatch) =>{",
+                        "\t\tdispatch(fetchRequest())",
+                        "\t\taxios.get(``)",
+                              "\t\t\t\t.then(res => {",
+                                  "\t\t\t\t\tconst product = res.data;",
+                                  "\t\t\t\t\tdispatch(fetchSuccess(product));",
+                            "\t\t\t\t}).catch(error => {",
+                                "\t\t\t\t\tdispatch(fetchFailure(error.message))",
+                                "\t\t\t\t\tconsole.log(error)",
+                        "\t\t});",
+                    "\t}",
+                "};",
+                "",
+                "export const fetchRequest = () => {",
+                    "\treturn {",
+                        "\t\ttype: FETCH_REQUEST",
+                    "\t}",
+                "};",
+                "",
+                "export const fetchSuccess = ${2:payloadName} => {",
+                    "\treturn {",
+                        "\t\ttype: FETCH_SUCCESS,",
+                        "\t\tpayload: ${2:payloadName}",
+                    "\t}",
+                "};",
+                "",
+                "export const fetchFailure = error => {",
+                    "\treturn {",
+                        "\t\ttype: FETCH_FAILURE,",
+                        "\t\tpayload: error",
+                    "\t}",
+                "};"
+        ],
+        "description":"Create a redux Action"
+    },
+}

@@ -1,0 +1,48 @@
+{
+    "name": "react-redux-quick-setup",
+    "displayName": "React Redux Setup Snippet",
+    "description": "react redux setup is a very fast",
+    "publisher": "tawhidjony",
+    "author":{
+        "name":"Tawhidur Rahman"
+    },
+    "version": "1.0.0",
+    "icon": "icon.png",
+    "keywords": [
+        "snippets",
+        "react",
+        "react snippets",
+        "redux",
+        "redux snippets",
+        "react redux",
+        "react redux snippets",
+        "javascript"
+    ],
+   "license": "MIT",
+   "homepage":"https://github.com/tawhidjony/react-redux-vs-code-snippets",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tawhidjony/react-redux-vs-code-snippets"
+    },
+    "bugs":{
+        "url":"https://github.com/tawhidjony/react-redux-vs-code-snippets/issues"
+    },
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
