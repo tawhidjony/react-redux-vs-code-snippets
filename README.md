@@ -4,11 +4,7 @@ The snippet using only for React Redux, To be onest the snippet working REDUX { 
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-![](images/vs_code_extention.gif)
+![*Demo*](https://raw.githubusercontent.com/tawhidjony/react-redux-vs-code-snippets/master/image/vs_code_extention.gif)
 	
 
 ## Release Notes
